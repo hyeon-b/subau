@@ -35,7 +35,7 @@
 				code += (char)((Math.random() * 10 ) + 48);
 				
 			emailadrs += "@sungshin.ac.kr";
-			JavaMailUtil.sendMail(emailadrs, code);
+			JavaMailUtil.sendMail("비밀번호 변경 인증 메일", "인증 코드", emailadrs, code);
 			
 			out.print("<h3>" + emailadrs + "으로 인증 코드를 전송하겠습니다.</h3>");
 			out.print("<br><button value=\"확인\" onClick=\"sendChildValue(\'" + code + "\')\">확인</button>");

@@ -12,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 
 public class JavaMailUtil {
 
-	public static void sendMail(String recepient, String code) throws Exception {
+	public static void sendMail(String sub, String content, String recepient, String code) throws Exception {
 		Properties properties = new Properties();
 
 		properties.put("mail.smtp.auth", "true");
@@ -30,17 +30,17 @@ public class JavaMailUtil {
 			}
 		});
 	
-		Message message = prepareMessage(session, myAccountEmail, recepient, code);
+		Message message = prepareMessage(session, sub, content, myAccountEmail, recepient, code);
 		Transport.send(message);
 		}
 	
-	private static Message prepareMessage(Session session, String myAccountEmail, String recepient, String code) {
+	private static Message prepareMessage(Session session, String sub, String content, String myAccountEmail, String recepient, String code) {
 		try {
 		Message message = new MimeMessage(session);
 		message.setFrom(new InternetAddress(myAccountEmail));
 		message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-		message.setSubject("수정바다유리병 :: 회원가입 인증메일");
-		message.setText("인증문구 : " + code);
+		message.setSubject("수정바다유리병 :: "+sub);
+		message.setText(content + " : " + code);
 		return message;
 		} catch (Exception ex) {
 			System.err.println("Exception이 발생했습니다.");

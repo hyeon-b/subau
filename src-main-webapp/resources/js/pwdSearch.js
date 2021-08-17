@@ -62,5 +62,5 @@ function sendTempPwd(){
 }
 
 function moveToLogin() {
-	location.href='/login';
+	location.href='login';
 }

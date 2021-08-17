@@ -25,7 +25,7 @@
 		if(res == 0){
 			emailadrs += "@sungshin.ac.kr";
 			
-			JavaMailUtil.sendMail(emailadrs, tempPwd);
+			JavaMailUtil.sendMail("수정바다 유리병 임시 비밀번호 발급","임시 비밀번호",  emailadrs, tempPwd);
 
 			
 			out.print("<h1> 임시 비밀번호 전송 </h1>");

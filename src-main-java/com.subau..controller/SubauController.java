@@ -46,10 +46,11 @@ public class SubauController {
     
 	
 	/*회원가입 제어*/
-	@RequestMapping(value = "/signUp")
+	@RequestMapping(value = "/signUp" )
 	public void signUp() {
 		log.info("회원가입 페이지 접근");	
 	}
+	
 	
 	@RequestMapping(value = "/sendMail")
 	public void sendMail() {
@@ -61,13 +62,7 @@ public class SubauController {
 		log.info("닉네임 중복 검사");	
 	}
 	
-	@RequestMapping(value = "/signup")
-	public void signupSuccess() {
-		log.info("회원가입 성공");	
-	}
-	
-	
-	   
+
 	   
 	/*메인/소개 페이지 제어*/
 	 @RequestMapping(value = "/welcome")
@@ -94,16 +89,7 @@ public class SubauController {
 	     model.addAttribute("list", mservice.getList(recver));
 	    }
 	 
-	 @RequestMapping(value="/mail")
-	    public void mailGET(Model model, HttpServletRequest request) {   
-		 log.info("받은 편지 조회 페이지 진입");
-	        
-	     HttpSession session = request.getSession();
-	     String user_id = (String)session.getAttribute("user_id");
-	     	
-	     model.addAttribute("list", mservice.getList(user_id));
-	    }
-	 
+
 	 
 	 
 	 /*매칭 제어*/

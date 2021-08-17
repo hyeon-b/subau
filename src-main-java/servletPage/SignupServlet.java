@@ -48,7 +48,7 @@ public class SignupServlet extends HttpServlet {
 		int result = userDAO.signUp(usrid, usrnname, usrpwd);
 		if(result == 0) {										//db저장 성공 == 회원 가입 성공 -> 로그인 페이지
 	        ServletContext context =getServletContext();
-	        RequestDispatcher dispatcher = context.getRequestDispatcher("login");
+	        RequestDispatcher dispatcher = context.getRequestDispatcher("/login");
 	        dispatcher.forward(request, response);	
 		} else if(result == -2){								//db저장 실패 
 			script.println("<script>");
