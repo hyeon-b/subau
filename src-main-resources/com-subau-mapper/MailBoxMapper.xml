@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.subau.mapper.MailBoxMapper">
+
+ <!-- 게시판 목록 -->
+    <select id="getList" parameterType="String" resultType="com.subau.model.MailBoxVO">
+    
+        select * from (
+			select  usertbl.user_nname, mailtbl.sender, mailtbl.recver, mailtbl.content, mailtbl.sndtime 
+			from mailtbl JOIN usertbl 
+			on mailtbl.sender = usertbl.user_id
+			where mailtbl.recver = #{recver}
+			and (mailtbl.sender,mailtbl.sndtime)in (
+			select mailtbl.sender, max(sndtime) as sndtime
+			from mailtbl JOIN usertbl group by sender
+			)
+			order by sndtime desc
+		) t
+		group by t.sender
+    	
+    </select>
+    
+    <delete id="matchDel">     	
+    	call matchdel(#{recver}, #{sender});
+    	delete from mailtbl where recver=#{recver} and sender=#{sender};
+    	delete from mailtbl where recver=#{sender} and sender=#{recver};
+    </delete>
+    
+    
+  </mapper>

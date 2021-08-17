@@ -1,0 +1,184 @@
+@charset "UTF-8";
+@font-face {
+      font-family: 'Cafe24Ssurround';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+}
+@font-face {
+	font-family: 'NEXON Lv1 Gothic OTF Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'NEXON Lv1 Gothic OTF Light';
+}
+
+body{
+  min-width:500px;
+  margin: 0;
+  padding-top:180px;
+  padding-bottom:120px;
+
+  background-color:#E3C1EC;
+}
+      
+      
+a{
+  color:white;
+  text-decoration:none;
+}
+
+
+input:focus{
+  outline:none;
+}
+  
+
+/*상단바*/
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+}
+
+
+.floating_bar{
+  position:relative;
+  padding:10px 10px 10px 20px;
+  height:20px;
+  width:100%;
+  
+  background-color: #4B5D9C;
+  color:white;
+  
+  font-size:12pt;
+  font-family:'Cafe24Ssurround';
+}
+    
+
+.fake_btn{
+   margin:0;
+}
+   
+
+.fake_btn>div{
+      position:absolute;
+      display:inline;
+      width:20px;
+      height:20px;
+      top:0;
+      right:0;
+      margin:10px;
+      background-color:#C4C4C4;
+}  
+
+
+.fake_btn>div:nth-child(2){
+    right:30px;
+}
+    
+
+.fake_btn>div:nth-child(3){
+      right:60px;
+}
+      
+    
+.floating_bar_menu{
+    display: flex;
+    height:40px;
+    width:100%;
+    flex-direction: row;
+    list-style-type: none;
+    margin:0;
+    padding:30px 0px 20px 0px;
+    background-color: #C4C4C4;
+    font-size:15pt;
+    }
+    
+    
+.floating_bar_item {
+    margin:0 0 0 30px;
+    padding:20px;
+    color:black;
+    font-weight:bold;
+    transition: all 0.2s;
+}
+      
+
+.floating_bar_item:hover{
+    color:#6D36B4;
+    font-weight:bold;
+    transition: all 0.2s;
+}
+
+
+/*컨텐츠*/
+.content{
+  margin-left:25%;
+  margin-right:25%;
+  
+  transition: all 0.3s;
+}
+
+.more{
+  margin:10px 0px;
+  text-align:right;
+  font-size:14pt;
+}
+
+.more>a{
+  margin-left:20px;
+  
+  font-weight:bold;
+  transition: all 0.2s;
+}
+
+.more>a:hover{
+  margin-left:20px;
+  color:#6D36B4;
+  
+  font-weight:bold;
+  transition: all 0.2s;
+}
+
+.letter{
+  padding:50px;
+  background-color:#fafafa;
+  
+  border-radius:10px;
+}
+
+.from{
+  display: inline;
+  
+  font-family: 'Cafe24Ssurround';
+  font-size:32pt;
+  color:#6D36B4;
+}
+
+.partnerName{
+  display: inline;
+  
+  font-family: 'Cafe24Ssurround';
+  font-size:24pt;
+  color:#6D36B4;
+}
+
+.maintxt{
+  word-wrap: break-word;
+  font-size:13pt;
+}
+
+
+/*footer*/
+footer{
+  position:fixed; 
+  left:0px; 
+  bottom:0px; 
+  height:60px; 
+  width:100%; 
+  background:#C4C4C4; 
+}
