@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import user.UserDAO;
 
-@WebServlet("/WebSendMail")
+@WebServlet("/subau/WebSendMail")
 public class WebSendMail extends HttpServlet {
 	int EmailSend = 1;
 
@@ -41,13 +41,13 @@ public class WebSendMail extends HttpServlet {
 				if(EmailSend == 0) {
 					response.setContentType("text/html; charset=UTF-8");
 					PrintWriter out = response.getWriter();
-					out.println("<script>alert('받는 분 이메일 관련해서 문제가 생긴것 같아요! \n 수정바다유리병 제작진에게 연락주시면 감사하겠습니다!'); location.href='write';</script>");
+					out.println("<script> alert('받는 분 이메일 관련해서 문제가 생긴것 같아요!  수정바다유리병 제작진에게 연락주시면 감사하겠습니다!'); location.href='write';</script>");
 					out.flush();
 				}
 				else if(EmailSend == 2){
 					response.setContentType("text/html; charset=UTF-8");
 					PrintWriter out = response.getWriter();
-					out.println("<script>alert('데이터베이스에 문제가 생긴것 같아요! \n 수정바다유리병 제작진에게 연락주시면 감사하겠습니다!'); location.href='write';</script>");
+					out.println("<script> alert('데이터베이스에 문제가 생긴것 같아요! 수정바다유리병 제작진에게 연락주시면 감사하겠습니다!'); location.href='write';</script>");
 					out.flush();
 					}
 				else{

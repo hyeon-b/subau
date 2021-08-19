@@ -37,15 +37,19 @@
       padding-left:150px;
       font-size: 20px;
   }
-    .floating_bar{
-      position:relative;
-      height:20px;
-      width:100%;
-      padding:10px 10px 10px 20px;
-      background-color: #4B5D9C;
-      color:white;
-      font-size:10pt;
-    }
+
+.floating_bar{
+  position:relative;
+  padding:10px 10px 10px 20px;
+  height:20px;
+  width:100%;
+    
+  background-color: #4B5D9C;
+  color:white;
+    
+  font-size:12pt;
+  font-family:'Cafe24Ssurround';
+}
 
   .fake_btn{
     margin:0;
